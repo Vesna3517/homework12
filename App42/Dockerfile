@@ -1,4 +1,4 @@
-FROM maven:3.2.3-jdk-6
+FROM maven:3.2-jdk-8-onbuild
 RUN apt update
 RUN apt install git -y
 RUN git clone https://github.com/shephertz/App42PaaS-Java-MySQL-Sample.git /usr/src/App42PaaS
