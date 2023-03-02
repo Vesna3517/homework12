@@ -1,0 +1,17 @@
+version: '3'
+services:
+  mvn:
+    build: App42
+    volumes:
+      - type: bind
+        source: ./mydata
+        target: /usr/src/App42PaaS/WebContent
+  web:
+    image: tomcat:9
+    ports:
+      - "8080:8080"
+      - "8085:8085"
+    volumes:
+      - type: bind
+        source: ./mydata
+        target: /usr/local/tomcat/webapps

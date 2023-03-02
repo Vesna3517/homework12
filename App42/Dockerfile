@@ -1,0 +1,6 @@
+FROM maven:latest
+RUN apt update
+RUN apt install git -y
+RUN git clone https://github.com/shephertz/App42PaaS-Java-MySQL-Sample.git /usr/src/App42PaaS
+WORKDIR /usr/src/App42PaaS/
+CMD ["mvn", "package"]
